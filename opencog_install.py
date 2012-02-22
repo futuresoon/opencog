@@ -78,6 +78,8 @@ def fab_install_dependencies(newpass):
         fabric.run("sed -i -e 's/# deb/deb/g\' /etc/apt/sources.list", pty=True)
         fabric.run("aptitude update ; aptitude install libxerces-c2-dev liblua5.1-0-dev libluabind-dev ; cd cogbuntu-11.10/ochack/bin ; cmake .. ; make", pty=True)
         fabric.run("cd cogbuntu-11.10/ochack/bin ; make install ; ldconfig", pty=True)
+        fabric.run("sed -i '1 i export PYTHONPATH=/root/cogbuntu-11.10/ochack/bin/opencog/cython:/root/cogbuntu-11.10/ochack/opencog/python:/root/custom/opencog/mindagents' /root/.bashrc", pty=True)
+        fabric.run("export PYTHONPATH=/root/cogbuntu-11.10/ochack/bin/opencog/cython:/root/cogbuntu-11.10/ochack/opencog/python:/root/custom/opencog/mindagents", pty=True)
 #        fabric.run("", pty=True)
 
 
