@@ -1,0 +1,15 @@
+1) Create a new Rackspace server (lucid lynx 10.04 for example)
+2) ssh root@xx.xx.xxx.xxx (where xx.xx.xxx.xxx is the ip number of the server you just created).
+
+3) Copy and paste this whole line as root:
+
+apt-get install -y git-core ; git clone git://github.com/apache/libcloud.git ; apt-get -y install python-setuptools ; git clone git://github.com/futuresoon/opencog.git ; cd libcloud ; python setup.py install ; apt-get install -y fabric ; cd ..
+
+4) Edit the aegir_ci_config.ini file:
+
+a) email - this is your personal email from which you will control aegir
+b) your rackspace username that you normally log into rackspace with
+c) your rackspace API key which can be found at:
+
+https://manage.rackspacecloud.com/APIAccess.do
+click Show key to unhide the key
